@@ -16,10 +16,10 @@ export default function FetchPosts(props) {
     return (
         <>
             {console.log(posts)}
-            <div id="carouselExampleSlidesOnly" className="carousel slide mx-auto w-75" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" className="carousel slide mx-auto w-50 mt-5 vh-100" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <h1 className="d-block w-100 bg-primary text-center">Student Posts</h1>
+                    <div className="carousel-item active bg-primary p-4 rounded-3">
+                        <h1 className="d-block w-100 text-center text-white">Student Posts</h1>
                     </div>
                     {posts.map((p,i) => <StudentPosts post={p} key={i} /> )}
                 </div>
