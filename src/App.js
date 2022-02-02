@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import Fetch from './components/Fetch';
 import Navbar from './components/Navbar';
+import FetchStudents from './components/FetchStudents';
+import FetchPosts from './components/FetchPosts';
 
 export default class App extends Component {
   render() {
     return (
       <>
         <Navbar/>
-        <Fetch/>
+        <div className="container">
+          <FetchStudents />
+          <FetchPosts />
+        </div>
       </>
     );
   }

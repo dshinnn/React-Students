@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShowData from './ShowData';
+import StudentList from '../views/StudentList';
 
 export default class Fetch extends Component {
     constructor(props) {
@@ -8,6 +8,7 @@ export default class Fetch extends Component {
             students: []
         }
     }
+
     componentDidMount() {
       fetch('https://kekambas-bs.herokuapp.com/kekambas')
         .then(res => res.json())
@@ -20,7 +21,7 @@ export default class Fetch extends Component {
 
     render() {
     return (
-        <div className="container">
+        <>
             <h1 className="text-center mt-5 text-success fw-bolder">Kemkambas Winter Session</h1>
             <table className="table table-dark table-hover mt-5 text-center w-75 mx-auto">
                 <thead>
@@ -31,10 +32,10 @@ export default class Fetch extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.students.map((s, i) => <ShowData student={s} key={i}/>)}
+                    {this.state.students.map((s, i) => <StudentList student={s} key={i}/>)}
                 </tbody>
             </table>
-        </div>
+        </>
     );
   }
 }
